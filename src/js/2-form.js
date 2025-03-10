@@ -14,6 +14,7 @@ window.addEventListener('load', evt => {
     localStorage.getItem(localStorageKey) ?? '{}'
   );
   formData = {
+    ...localFormData,
     email: localFormData.email ?? '',
     message: localFormData.message ?? '',
   };

@@ -1,6 +1,3 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
 const form = document.querySelector('.feedback-form');
 const localStorageKey = 'feedback-form-state';
 let formData = { email: '', message: '' };

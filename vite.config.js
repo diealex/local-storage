@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src',
+    root: 'src/',
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -36,6 +36,9 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
       emptyOutDir: true,
+    },
+    optimizeDeps: {
+      entries: [],
     },
     plugins: [
       injectHTML(),

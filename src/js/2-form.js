@@ -13,17 +13,26 @@ form.addEventListener('input', evt => {
 });
 
 window.addEventListener('load', evt => {
-  formData = JSON.parse(localStorage.getItem(localStorageKey) ?? '{}');
-  form.elements.email.value = formData.email ?? '';
-  form.elements.message.value = formData.message ?? '';
+  const localFormData = JSON.parse(
+    localStorage.getItem(localStorageKey) ?? '{}'
+  );
+  formData = {
+    email: localFormData.email ?? '',
+    message: localFormData.message ?? '',
+  };
+  form.elements.email.value = formData.email;
+  form.elements.message.value = formData.message;
 });
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
   if (!formData.email || !formData.message) {
     alert('Fill please all fields');
-  } else console.log(formData);
-  formData = {};
+    return;
+  }
+  console.log(formData);
+  formData.email = '';
+  formData.message = '';
   localStorage.removeItem(localStorageKey);
   form.reset();
 });

@@ -77,11 +77,7 @@ const markup = images
 myGallery.innerHTML = markup;
 
 let gallery = new SimpleLightbox('.gallery a', {
-  captionSelector: '.gallery-image',
-  captionPosition: 'top',
   captionsData: 'alt',
   captionDelay: 250,
-  captionPosition: 'bottom',
-  className: 'test-lightbox',
 });
 gallery.on('show.simplelightbox', function () {});

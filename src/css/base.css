@@ -34,7 +34,7 @@ main:has(.back-link) {
   object-fit: cover;
   cursor: pointer;
 }
-.test-lightbox > .sl-close,
+.sl-close,
 .sl-next,
 .sl-prev,
 .sl-counter {
